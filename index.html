@@ -1,0 +1,238 @@
+<!DOCTYPE html>
+<html lang="uk">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>BMW</title>
+  <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&display=swap" rel="stylesheet">
+  <style>
+    /* Загальні стилі */
+    body {
+      margin: 0;
+      padding: 0;
+      font-family: 'Roboto', sans-serif;
+      background-color: #0a0a0a;
+      color: #fff;
+      overflow-x: hidden;
+    }
+
+    h1, h2, h3 {
+      font-weight: bold;
+    }
+
+    /* Анімації */
+    @keyframes fadeIn {
+      0% { opacity: 0; }
+      100% { opacity: 1; }
+    }
+
+    /* Стилі шапки */
+    header {
+      position: fixed;
+      width: 100%;
+      top: 0;
+      left: 0;
+      background-color: rgba(0, 0, 0, 0.8);
+      padding: 15px 50px;
+      z-index: 100;
+      display: flex;
+      justify-content: flex-start;
+      align-items: center;
+      animation: fadeIn 1s ease-in-out;
+    }
+
+    header .logo {
+      font-size: 40px;
+      color: #fff;
+      letter-spacing: 2px;
+      font-weight: 700;
+      text-transform: uppercase;
+      margin-right: 30px;
+    }
+
+    header nav ul {
+      list-style: none;
+      display: flex;
+      flex-direction: column;
+      padding: 0;
+      margin: 0;
+    }
+
+    header nav ul li {
+      margin-bottom: 15px;
+    }
+
+    header nav ul li a {
+      text-decoration: none;
+      color: #fff;
+      font-size: 18px;
+      letter-spacing: 1px;
+      transition: color 0.3s;
+    }
+
+    header nav ul li a:hover {
+      color: #f0f0f0;
+    }
+
+    /* Головний екран */
+    .hero {
+      height: 100vh;
+      background: url('https://steamuserimages-a.akamaihd.net/ugc/857233790551695311/0DA8EBCF8C269631A22519DB975157354AB768DE/?imw=5000&imh=5000&ima=fit&impolicy=Letterbox&imcolor=%23000000&letterbox=false') center/cover no-repeat;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      text-align: center;
+      color: white;
+      position: relative;
+      animation: fadeIn 2s ease-in-out;
+    }
+
+    .hero h1 {
+      font-size: 65px;
+      text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.7);
+      margin-bottom: 10px;
+      color: #c2c2c2;
+    }
+
+    .btn-cta {
+      background-color: #00b0d4;
+      color: white;
+      padding: 15px 30px;
+      border: none;
+      font-size: 18px;
+      cursor: pointer;
+      transition: background-color 0.5s;
+      border-radius: 17px;
+      text-transform: uppercase;
+      margin-top: 30px;
+      display: inline-block;
+       text-decoration: none;
+    }
+
+    .btn-cta:hover {
+      background-color: #008c9e;
+    }
+
+    /* Розділ з автомобілями */
+    .cars-section {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 30px;
+      padding: 60px 50px;
+      background-color: #1c1c1c;
+      animation: fadeIn 1.5s ease-in-out;
+    }
+
+    .car-card {
+      background-color: #333;
+      border-radius: 10px;
+      overflow: hidden;
+      position: relative;
+      box-shadow: 0 4px 10px rgba(0, 0, 0, 0.5);
+      transition: transform 0.3s ease;
+    }
+
+    .car-card:hover {
+      transform: translateY(-10px);
+    }
+
+    .car-card img {
+      width: 100%;
+      height: 200px;
+      object-fit: cover;
+    }
+
+    .car-card h3 {
+      text-align: center;
+      padding: 10px;
+      color: #fff;
+      font-size: 22px;
+    }
+
+    .car-card p {
+      padding: 0 20px;
+      color: #ccc;
+      font-size: 16px;
+    }
+
+    /* Мобільна адаптація */
+    @media (max-width: 768px) {
+      .cars-section {
+        grid-template-columns: 1fr 1fr;
+      }
+
+      .hero h1 {
+        font-size: 40px;
+      }
+    }
+
+    @media (max-width: 480px) {
+      header {
+        padding: 10px 20px;
+      }
+
+      .cars-section {
+        grid-template-columns: 1fr;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Шапка -->
+  <header>
+    <div class="logo">BMW</div>
+    <nav>
+      <ul>
+        <li><a href="#hero">Головна</a></li>
+        <li><a href="#cars">Моделі</a></li>
+        <li><a href="#contact">Контакти</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <!-- Головний екран -->
+  <section class="hero" id="hero">
+    <div>
+      <h1>BMW: Ідеальна гармонія технологій та дизайну</h1>
+      <a href="#cars" class="btn-cta" style="margin-top: 50px;">Переглянути моделі</a>
+    </div>
+  </section>
+
+  <!-- Розділ з автомобілями -->
+  <section class="cars-section" id="cars">
+    <div class="car-card">
+      <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSav0GPE3vJEiQlOYDiH3nxihfs-1Wu5wrJUA&s" alt="BMW 3 Series">
+      <h3>BMW 3 Series</h3>
+      <p>Експресивний дизайн і неймовірна потужність, що не залишає байдужим</p>
+    </div>
+    <div class="car-card">
+      <img src="https://upload.wikimedia.org/wikipedia/commons/0/03/BMW_G05_45e_IMG_3714.jpg" alt="BMW X5">
+      <h3>BMW X5</h3>
+      <p>Високий комфорт, стиль і все, що потрібно для найкращих подорожей</p>
+    </div>
+    <div class="car-card">
+      <img src="https://www.bmw-me.com/content/dam/bmw/common/all-models/m-series/series-overview/bmw-m-series-seo-overview-teaser-02.jpg" alt="BMW M Series">
+      <h3>BMW M Series</h3>
+      <p>Для справжніх любителів швидкості та максимального контролю на дорозі</p>
+    </div>
+  </section>
+
+  <!-- Контакти -->
+  <section id="contact" style="padding: 60px 50px; text-align: center; background-color: #333;">
+    <h2>Зв'язатися з нами</h2>
+    <p>Хочете дізнатися більше про наші моделі або отримати консультацію? Залиште свої дані, і ми зв'яжемося з вами!</p>
+    <form style="margin-top: 20px;">
+      <input type="text" placeholder="Ваше ім'я" style="padding: 10px; margin-bottom: 10px; width: 80%; border: none; border-radius: 5px; weight:200px;">
+      <input type="email" placeholder="Ваша електронна пошта" style="padding: 10px; margin-bottom: 10px; width: 80%; border: none; border-radius: 5px;">
+      <button type="submit" style="background-color: #00b0d4; color: white; padding: 10px 20px; border: none; border-radius: 5px; cursor: pointer;">Відправити</button>
+    </form>
+  </section>
+
+  <!-- Футер -->
+  <footer style="background-color: #111; padding: 20px; text-align: center;">
+    <p>&copy; 2024 BMW. Всі права захищено</p>
+  </footer>
+
+</body>
+</html>
